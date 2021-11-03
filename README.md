@@ -83,5 +83,5 @@ I know now that people have done amazing thing in STOS, maybe even on the level 
 
 Lot of great Atari Software came through germany and somehow I got hold of a german version of [DevPac from HiSoft Systems](https://en.wikipedia.org/wiki/HiSoft_Systems). Which assembler is the best is subjective but I loved Dev Pac and the debugger.
 
-![DevPac from atarimania](images/devpac.png)
+![DevPac from atarimania](images/High_Devpac_02.jpg)
 ![DevPac debugger from atarimania](images/debugger.png)
