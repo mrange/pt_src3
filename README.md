@@ -46,6 +46,28 @@ My mind was blown by the peek/poke listings so common in computer magazines.
 ![Code type in from biosrhythm.com](images/code-type-in.jpg)
 > How can anyone program this way? It makes no sense.
 
-Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor (640x400 71 hz and paper white).
+Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor, 640x400 71 hz and paper white.
 
 ![Atari 260 from www.duensser.com/pico/atari260st_op.jpg](images/atari260st_op.jpg)
+
+I still mostly played games while tinkering with programming but didn't see much point in programming as I thought I could just buy the games I needed.
+
+## Becoming a programmer
+
+A very important turning point for me was a summer trip through Sweden with my family. We had a big american car which was odd in sweden and we went on a trip in it.
+
+Before the trip my father had given me an advanced calculator that had a BASIC interpreter.
+
+![Casio FX730P from www.calculatormuseum.nl/calculators/casio_fx730p1.JPG](images/casio_fx730p1.jpg)
+
+As there was no games on the calculator I was learning BASIC while sitting in the back of the car during the summer trip and programmed a slot machine game, guess the number and a very simple shoot-em-up.
+
+What I learnt was that I enjoyed programming and when I returned home I started doing [GFA Basic](https://en.wikipedia.org/wiki/GFA_BASIC) for fun.
+
+## Cuddly Demos
+
+As I was interested in games and graphics after awhile I had moved on from [GFA Basic](https://en.wikipedia.org/wiki/GFA_BASIC) to [STOS BASIC](https://en.wikipedia.org/wiki/STOS_BASIC) which was a basic version intended to write games and graphics in.
+
+![STOS loading screen](https://upload.wikimedia.org/wikipedia/en/a/a9/STOS_BASIC_loading_screen.png)
+
+![STOS editor from www.atarimania.com](images/stos.gif)
