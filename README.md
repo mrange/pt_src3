@@ -77,4 +77,11 @@ However when a friend showed me [The Cuddly Demos by The Carebears](https://demo
 ![The Cuddly demos from demozoo](images/cuddly_demos.png)
 > I can never make this in STOS. I need to learn assembler!
 
-I know now that people have done amazing thing in STOS and maybe even on the level of The Cuddly Demos but this is what got me into assembler programming.
+I know now that people have done amazing thing in STOS, maybe even on the level of The Cuddly Demos but this is what got me into assembler programming.
+
+## Dev Pac, I loved you
+
+Lot of great Atari Software came through germany and somehow I got hold of a german version of [DevPac from HiSoft Systems](https://en.wikipedia.org/wiki/HiSoft_Systems). Which assembler is the best is subjective but I loved Dev Pac and the debugger.
+
+![DevPac from atarimania](images/devpac.png)
+![DevPac debugger from atarimania](images/debugger.png)
