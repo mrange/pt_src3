@@ -64,10 +64,17 @@ As there was no games on the calculator I was learning BASIC while sitting in th
 
 What I learnt was that I enjoyed programming and when I returned home I started doing [GFA Basic](https://en.wikipedia.org/wiki/GFA_BASIC) for fun.
 
-## Cuddly Demos
+## The Cuddly Demos around 1990
 
 As I was interested in games and graphics after awhile I had moved on from [GFA Basic](https://en.wikipedia.org/wiki/GFA_BASIC) to [STOS BASIC](https://en.wikipedia.org/wiki/STOS_BASIC) which was a basic version intended to write games and graphics in.
 
 ![STOS loading screen](https://upload.wikimedia.org/wikipedia/en/a/a9/STOS_BASIC_loading_screen.png)
 
 ![STOS editor from www.atarimania.com](images/stos.gif)
+
+However when a friend showed me [The Cuddly Demos by The Carebears](https://demozoo.org/productions/76257/)([youtube](https://www.youtube.com/watch?v=5pRelt_CPVk)) my mind was blown. I thought:
+
+![The Cuddly demos from demozoo](images/cuddly_demos.png)
+> I can never make this in STOS. I need to learn assembler!
+
+I know now that people have done amazing thing in STOS and maybe even on the level of The Cuddly Demos but this is what got me into assembler programming.
