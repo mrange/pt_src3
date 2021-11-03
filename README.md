@@ -37,13 +37,15 @@ This is my 10th attempt of writing that story.
 
 The first time I saw a computer (Commodore 64) I was hooked. I was drawn to computers instinctively.
 
-![Commodore 64](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/1024px-Commodore-64-Computer-FL.jpg).
+![Commodore 64](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/1024px-Commodore-64-Computer-FL.jpg)
 
 I almost exclusively played games but tinkered in basic programming but I didn't understand much. I was greatly disappointed after pain stakingly typing in a bubble sort routine and there was no bubbles to be seen on screen.
 
 My mind was blown by the peek/poke listings so common in computer magazines.
 
+![Code type in from biosrhythm.com](images/code-type-in.jpg)
 > How can anyone program this way? It makes no sense.
 
-![Code type in from biosrhythm.com](images/code-type-in.jpg)
+Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor (640x400 71 hz and paper white).
 
+![Atari 260 from www.duensser.com/pico/atari260st_op.jpg](images/atari260st_op.jpg)
