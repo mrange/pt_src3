@@ -48,7 +48,8 @@ My mind was blown by the peek/poke listings so common in computer magazines.
 
 Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor, 640x400 71 hz and paper white.
 
-![Atari 260 from www.duensser.com/pico/atari260st_op.jpg](images/atari260st_op.jpg)
+![Atari 520 ST with a monochrome monitor](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Atari_520_ST_%2B_with_monochrome_monitor_SM_124.jpg/1024px-Atari_520_ST_%2B_with_monochrome_monitor_SM_124.jpg)
+> The computer on the picture is an Atari 520 ST but the Atari 260 ST looked exactly like that except different model number.
 
 I still mostly played games while tinkering with programming but didn't see much point in programming as I thought I could just buy the games I needed.
 
@@ -85,3 +86,59 @@ Lot of great Atari Software came through germany and somehow I got hold of a ger
 
 ![DevPac from atarimania](images/High_Devpac_02.jpg)
 ![DevPac debugger from atarimania](images/debugger.png)
+
+I learnt the basics of assembler programming from [Svenska Hemdatornytt](https://sv.wikipedia.org/wiki/Svenska_Hemdatornytt)(Swedish home computer news) and their series "Learn assembler programming".
+
+![Hemdatornytt from internet archive](https://archive.org/services/img/SvenskaHemdator1990-03/full/pct:200/0/default.jpg)
+
+I still remember the intense feeling when I got my first scroll text working.
+
+## Atari STE around 1991
+
+The Atari 260 ST was aging, it had a few technical problems and I read about the new Atari STE which among other things had support for digital to audio signal conversion. This was possible on the old Atari ST but had to be emulated which took precious clock cycles.
+
+My father got me a summer job on a oil tanker which itself was pretty cool but the important outcome was that I earned a bit of money and could purchase an Atari STE.
+
+To help me unlock the power of the STE I had the book "Atari ST/STE - Hårdfakta" that had been updated to contain information about the STE specific hardware.
+
+!["Atari Hardfacts"](images/hardfacts)
+
+## TCB Tracker
+
+The Carebears, which I idolized due to The Cuddle Demos, was releasing their own tracker called TCB Tracker. Trackers were a software common on the Amiga to make cool music.
+
+The TCB Tracker was rumoured to have an STE enhanced mode that utilized the Atari STE new digital to audio soundchip.
+
+![TCB Tracker from pouet.net](https://content.pouet.net/files/screenshots/00022/00022538.gif)
+
+I was however not impressed by the sound quality. The sound was more crisp in the Atari ST mode compared to the Atari STE mode.
+
+Analyzing the player code I found out why.
+
+On the old Atari ST when you emulated a digital to analog soundchip you ran an interrupt on 10kHz as compromise between quality and speed. Each interrupt the next 8 bit sample was read and using "magic" (as in I never understood how it worked) the sample was translated to instructions to the Atari ST square wave sound chip that emulated a digital to audio conversion. It did sound surprisingly good often.
+
+On the new Atari STE there was however a dedicated DMA that automatically read 8 bit samples from memory into the soundchip for you.
+
+The only difference between the Atari ST and Atari STE mode in the TCB Tracker player code was that instead of the interrupt writing to the Atari ST chip it wrote the samples to a 2 byte looped area that sent the samples to the STE soundchip at 12.5kHz. Essentially the same architecture which makes sense I suppose.
+
+A very simple change to make the sound more crisp was to switch the frequency from 12.5kHz to 50kHz (the highest supported frequency by the Atari STE).
+
+However, in my mind in order to fully utilize the Atari STE an entirely new architecture has to be created. I decided to write my own player.
+
+# NoiseTracker and Dr. Doom
+
+Most songs, also known as modules, was not created in TCB Tracker. They were created in SoundTracker, NoiseTracker or ProTracker on the Amiga.
+
+In order to get access to maximum amount of songs I wanted my player to be a NoiseTracker player.
+
+But I needed someway to get me started.
+
+![Tristar cracktro from youtube](images/cracktro.png)
+
+Games were typically protected in various way to prevent piracy. These protections were removed and the games were released on "Compacted Disks" containing several games on a single floppy. This was called cracking a game and the people doing so often put a small "cracktro" with contact info, cool graphics and music before loading the game.
+
+One of those was made by a Dr. Doom. I can't find an image of this cracktro but was special about it was that it had a decent STE player.
+
+Using a home-grown memory scanner I managed to find the decompressed code in memory, save it and reverse engineered it.
+
+The Dr. Doom player worked as I thought it should. It played NoiseTracker songs and it was architectured around the STE hardware.
