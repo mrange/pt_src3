@@ -101,7 +101,7 @@ My father got me a summer job on a oil tanker which itself was pretty cool but t
 
 To help me unlock the power of the STE I had the book "Atari ST/STE - Hårdfakta" that had been updated to contain information about the STE specific hardware.
 
-!["Atari Hardfacts"](images/hardfacts)
+!["Atari Hardfacts"](images/hardfacts.png)
 
 ## TCB Tracker
 
@@ -109,7 +109,7 @@ The Carebears, which I idolized due to The Cuddle Demos, was releasing their own
 
 The TCB Tracker was rumoured to have an STE enhanced mode that utilized the Atari STE new digital to audio soundchip.
 
-![TCB Tracker from pouet.net](https://content.pouet.net/files/screenshots/00022/00022538.gif)
+![TCB Tracker from internet archibe](images/tcbtracker.png)
 
 I was however not impressed by the sound quality. The sound was more crisp in the Atari ST mode compared to the Atari STE mode.
 
