@@ -25,5 +25,7 @@ He had some ideas on how to address the problem and I didn't hear much more.
 
 I was later blown away about what he used it for when I saw [STNICCC 2000 Demo](https://demozoo.org/productions/59549/)([Youtube](https://www.youtube.com/watch?v=nqVJWFNpTqA&t=20s)).
 
+![STNICCC 2000 Demo](images/stnicc.png)
+
 A life-time achievment unlocked for me although I consider the Paula emulator a very small part of that demo.
 
