@@ -29,3 +29,21 @@ I was later blown away about what he used it for when I saw [STNICCC 2000 Demo](
 
 A life-time achievment unlocked for me although I consider the Paula emulator a very small part of that demo.
 
+I read [Leonards blog](http://leonard.oxg.free.fr/) and found the story about breaking an [old sprite record](http://leonard.oxg.free.fr/record16/record16.html) fascinating and it reminded me about my efforts that lead to pt_src3.s. I thought that I perhaps should write the pt_src3.s story.
+
+This is my 10th attempt of writing that story.
+
+## First steps
+
+The first time I saw a computer (Commodore 64) I was hooked. I was drawn to computers instinctively.
+
+![Commodore 64](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/1024px-Commodore-64-Computer-FL.jpg).
+
+I almost exclusively played games but tinkered in basic programming but I didn't understand much. I was greatly disappointed after pain stakingly typing in a bubble sort routine and there was no bubbles to be seen on screen.
+
+My mind was blown by the peek/poke listings so common in computer magazines.
+
+> How can anyone program this way? It makes no sense.
+
+![Code type in from biosrhythm.com](images/code-type-in.jpg)
+
