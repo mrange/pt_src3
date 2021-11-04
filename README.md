@@ -137,8 +137,87 @@ But I needed someway to get me started.
 
 Games were typically protected in various way to prevent piracy. These protections were removed and the games were released on "Compacted Disks" containing several games on a single floppy. This was called cracking a game and the people doing so often put a small "cracktro" with contact info, cool graphics and music before loading the game.
 
-One of those was made by a Dr. Doom. I can't find an image of this cracktro but was special about it was that it had a decent STE player.
+One of those was made by a Dr. Doom. I can't find an image of this cracktro but what was special about it was that it had a decent STE player.
 
 Using a home-grown memory scanner I managed to find the decompressed code in memory, save it and reverse engineered it.
 
 The Dr. Doom player worked as I thought it should. It played NoiseTracker songs and it was architectured around the STE hardware.
+
+# Amiga vs Atari STE
+
+The Amiga had 4 independent digital to analog sound channels with pitch and volume control.
+
+As much as we wanted the Atari STE to be an "Amiga killer" it didn't really deliver in that area as the Atari STE had 2 digital to analog sound channels with independent volume control and shared coarse pitch control. The replay frequency of the STE was 6kHz, 12.5kHZ, 25kHz and 50kHz.
+
+50kHz replay frequency was significantly higher than the Amiga about max ~28kHz replay frequency but that was about it.
+
+The NoiseTracker format is strongly coupled to the Amiga hardware as it has 4 independent channels and the values for pitch and volume can be copied into the Amiga hardware registers without modification (my memory is admittably a bit vague here).
+
+In order to play Amiga Noisetracker the approach I went for was emulating the Amiga soundchip Paula thus pt_src3.s is a Paula emulator.
+
+That meant I could use the Amiga NoiseTracker or ProTracker source code with just minor modifications to make them write to my "software" registers rather than the Amiga hardware registers.
+
+In order to emulate the Paula soundchip on Atari STE you had to implement:
+1. Fine grained pitch control per channel
+2. Volume control per channel
+3. Mix 2 channels into 1
+
+Atari STE left and right channel are interleaved bytes like so:
+
+```
+------------------------------------------------
+| Left  | Right | Left  | Right | Left  | Right
+------------------------------------------------
+```
+
+One of my early attemps that wrote the left and right channel separately looked something like below.
+
+```asm
+; a0-a1 - points to sample                (2 channels)
+; d0-d1 - fixed point offset into sample  (2 channels)
+;  Top 16 bits is the fraction
+;  Bottom 16 bits is the integer
+; d2-d3 - fixed point pitch step
+; d7    - number of samples to write
+; a2-a3 - points to volume table          (2 channels)
+.loop
+move.b    (a0,d0.w),d4    ; Get sample for first channel
+move.b    (a1,d1.w),d5    ; Get sample for second channel
+move.b    (a2,d4.b),d4    ; Do volume calculation, divided by 2 implictly
+add.b     (a3,d5.b),d4    ; Do volume calculation, divided by 2 implictly
+                          ; adds the two samples to mix them
+move.b    d4,(a4)         ; Store the sample in the output buffer
+addq.l    #2,a4           ; The left & right channel are interleaved on STE
+                          ; Therefore add with two
+swap      d0              ; Restore the fixed point number
+swap      d1              ; Restore the fixed point number
+add.l     d2,d0           ; Add stepping speed for first channel
+add.l     d3,d1           ; Add stepping speed for second channel
+swap      d0              ; Restore the sample offset
+swap      d1              ; Restore the sample offset
+dbf       d7,.loop        ; Loop until frame is complete
+```
+
+This is not the very first version of the emulator as in the first version I also checked for the end of the sample at every sample but one of the very earliest optimizations I learnt about was extending the samples in the mod file with enough bytes so the end check could be done at the end of the frame rather at each byte.
+
+It was a very significant improvement but still the code above is slow.
+
+My 68k instructions timings is a bit rusty but I think the above code evaluates to about 124 cycles per sample written. To support 12.5kHz you need to write 25,000 bytes per second (1 byte per each channel) which is about 3,100,000 cycles which on an 8MHz Atari STE is about 39% CPU or 80% CPU for a 25 kHz.
+
+25 kHz did sound pretty good but it took a significant amount of time.
+
+# Going to my first demo party
+
+I had a this time started to hang around with the guys in [Impulse](https://demozoo.org/groups/29352/) and we went to a demo party Skövde together (TODO: Ask Reine, which one?).
+
+Being quite the introvert the demo party was stressful but also quite exciting to see so many nerds with similar interest. Where I lived at the time computers were rare and there was little interest in them.
+
+I brought my NoiseTracker routine and while at the demo party I chatted with one of the organizer that later used it in party demo which was cool. He also showed me the first trick of removing the end checks per sample. Since 25kHz was very time consuming he used the 12kHz mode.
+
+# The 50kHz barrier
+
+As 25kHz was lower than the Amiga's max frequency there was a case for making a 50kHZ player. I had tinkered with the code but couldn't make it fast enough. After some failed attempts I had concluded it was impossible.
+
+I was therefore very surprised when I at the demo party saw Audio Sculpture which claimed to have a 50kHz mode.
+
+![Audio Sculpture tracker from pouet](https://content.pouet.net/files/screenshots/00029/00029334.png)
