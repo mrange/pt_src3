@@ -221,3 +221,103 @@ As 25kHz was lower than the Amiga's max frequency there was a case for making a 
 I was therefore very surprised when I at the demo party saw Audio Sculpture which claimed to have a 50kHz mode.
 
 ![Audio Sculpture tracker from pouet](https://content.pouet.net/files/screenshots/00029/00029334.png)
+
+As many hackers I had already developed a bit of an unmotivated ego and seeing someone else achieve what I thought was impossible was a blow to that ego.
+
+But it started a very important process in the brain. It is obviously possible to do 50kHz player. With that knowledge the brain starts looking for cheats and can find one that it previously didn't see.
+
+I have felt that multiple times since then. "This can't be improved". Then someone shows an improvement and that in term leads to a new solution that is even better and so on.
+
+A friendly competition can be very fruitful for everyone.
+
+# Self-generating code and cheating
+
+I managed to get a copy of the Audio Sculpture software and was experimenting with it. It did sound a lot like 50kHz so they had done it but I noticed that the pitch seemed to be fixed in steps. That did sound great for some songs but not all.
+
+So what I suspected they done is that they used self-generating code to generate code to avoid pitch computation per sample but for memory reasons couldn't get the full pitch range of Amiga.
+
+Here I believe I took a step in a direction most players didn't take which later enabled pt_src3.s.
+
+My thoughts were something like this.
+
+Each frame (1/50th second) I need to write 1000 bytes per channel for 50kHz.
+
+I don't have enough memory to generate code that steps the input sample from about ~75 steps to ~580 steps.
+
+However what I can do is splitting the frame into smaller subframes of say 100 bytes. I then need to step between 7 to 58 steps or 51 different methods. I then stitch the subframes together into the big frame.
+
+So my player during initalization generated 51 different methods that "optimally" stepped between 7 and 58 steps.
+
+If I during a frame needed to step 145 steps I switched between calling the 14 and 15 step function so I ended up at 145 steps in the full frame.
+
+The first attempt looked something like
+
+```asm
+move.b  $X(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $Y(a1)      ; Write sample
+```
+
+This isn't valid 68K code in that the X and Y is undefined but what you did was that you during the init step computed the corrected offsets and wrote assembly code to a method that would then look like this in the case we want to step 50 times over 100 bytes written.
+
+```asm
+move.b  $0(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $0(a1)      ; Write sample
+
+move.b  $0(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $2(a1)      ; Write sample
+
+
+move.b  $1(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $3(a1)      ; Write sample
+
+move.b  $1(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $4(a1)      ; Write sample
+```
+
+This wrote the first channel, then we need a slightly different version that mixed the second channel.
+
+```asm
+move.b  $X(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+add.b  d0, $Y(a1)       ; Mix sample
+```
+
+This was a significant improvement in performance in about 88 bytes per sample written meaning the 25kHz routine "just" takes 55% CPU time down from 80%.
+
+But 55% is still too high as 50kHz would then take 110%.
+
+However, there is unnecessary work done that can be eliminated.
+
+```asm
+move.b  $0(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $0(a1)      ; Write sample
+
+move.b  $0(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+move.b  d0, $2(a1)      ; Write sample
+```
+
+We read the same byte twice and compute the volume twice. Instead what we can do is this.
+
+```asm
+move.b  $0(a0), d0      ; Read sample
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+
+move.b  d0, $0(a1)      ; Write 1st sample
+move.b  d0, $2(a1)      ; Write 2nd sample
+```
+
+So with that modification the worst case of 580 sample reads per frame and 1000 writes would then mean approximately ~64 clockcycles per sample written or about 80% CPU for a 50kHz player.
+
+Often it take less CPU if channels uses a lower pitch, which is the reason for  pt_src3.s signature fluctating CPU usage. Not necessarily a good thing unless you have some way to average it out.
+
+With this technique I was able to implement my first 50kHz routine that had a fine-grained pitch.
+
+I was very satisified.
+
