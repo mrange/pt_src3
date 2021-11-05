@@ -4,7 +4,6 @@
 
 ![Chalmers Univeristy, Public Domain](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Chalmers_University_of_Technology.jpg/1024px-Chalmers_University_of_Technology.jpg)
 
-
 In my small university dorm room I completed pt_src3.s right before I was about to start my university studies at Chalmers.
 
 pt_src3.s was the amalgam of all the best ideas I had seen for Paula emulators for Atari STE.
@@ -125,7 +124,7 @@ A very simple change to make the sound more crisp was to switch the frequency fr
 
 However, in my mind in order to fully utilize the Atari STE an entirely new architecture has to be created. I decided to write my own player.
 
-# NoiseTracker and Dr. Doom
+## NoiseTracker and Dr. Doom
 
 Most songs, also known as modules, was not created in TCB Tracker. They were created in SoundTracker, NoiseTracker or ProTracker on the Amiga.
 
@@ -143,7 +142,9 @@ Using a home-grown memory scanner I managed to find the decompressed code in mem
 
 The Dr. Doom player worked as I thought it should. It played NoiseTracker songs and it was architectured around the STE hardware.
 
-# Amiga vs Atari STE
+I used the Dr. Doom player as basis for my own player and pt_src3.s is therefore ultimately a derivate of the Dr. Doom player.
+
+## Amiga vs Atari STE
 
 The Amiga had 4 independent digital to analog sound channels with pitch and volume control.
 
@@ -206,15 +207,22 @@ My 68k instructions timings is a bit rusty but I think the above code evaluates 
 
 25 kHz did sound pretty good but it took a significant amount of time.
 
-# Going to my first demo party
+## Impulse and the Brainless Institute Party - Going to my first demo party
 
-I had a this time started to hang around with the guys in [Impulse](https://demozoo.org/groups/29352/) and we went to a demo party Skövde together (TODO: Ask Reine, which one?).
+![Impulse from Reine](images/impulse.jpg)
+
+!["Young Nerds" from Reine](images/young_nerds.JPG)
+
+I had a this time started to hang around with the guys in [Impulse](https://demozoo.org/groups/29352/). We are not talking TCB, TLB or Omega level here, not even close but we had fun and we went to our first demo party in Skövde together.
+
+![Brainless from Reine](images/brainless_party.jpg)
+> Brainless Institute party 1992
 
 Being quite the introvert the demo party was stressful but also quite exciting to see so many nerds with similar interest. Where I lived at the time computers were rare and there was little interest in them.
 
-I brought my NoiseTracker routine and while at the demo party I chatted with one of the organizer that later used it in party demo which was cool. He also showed me the first trick of removing the end checks per sample. Since 25kHz was very time consuming he used the 12kHz mode.
+I brought my NoiseTracker routine and while at the demo party I chatted with one of the organizer that later used it in a party demo which was cool. He also showed me the first trick of removing the end checks per sample. Since 25kHz was very time consuming he used the 12kHz mode.
 
-# The 50kHz barrier
+## The 50kHz barrier
 
 As 25kHz was lower than the Amiga's max frequency there was a case for making a 50kHZ player. I had tinkered with the code but couldn't make it fast enough. After some failed attempts I had concluded it was impossible.
 
@@ -230,23 +238,25 @@ I have felt that multiple times since then. "This can't be improved". Then someo
 
 A friendly competition can be very fruitful for everyone.
 
-# Self-generating code and cheating
+## Self-generating code and cheating
 
 I managed to get a copy of the Audio Sculpture software and was experimenting with it. It did sound a lot like 50kHz so they had done it but I noticed that the pitch seemed to be fixed in steps. That did sound great for some songs but not all.
 
 So what I suspected they done is that they used self-generating code to generate code to avoid pitch computation per sample but for memory reasons couldn't get the full pitch range of Amiga.
 
-Here I believe I took a step in a direction most players didn't take which later enabled pt_src3.s.
+Here I believe I took a step in a direction most players didn't which later enabled pt_src3.s.
 
 My thoughts were something like this.
 
-Each frame (1/50th second) I need to write 1000 bytes per channel for 50kHz.
+With the base frequency of 50kHz if I am to play a sample at 29kHz I need to "stretch" 29000 bytes over 50000 bytes per second or 580 bytes over 1000 bytes if we run the player each frame (1/50th of second).
 
-I don't have enough memory to generate code that steps the input sample from about ~75 steps to ~580 steps.
+The maximum amount of steps of the input sample is 580 bytes per frame and the lowest about 75 bytes per frame.
 
-However what I can do is splitting the frame into smaller subframes of say 100 bytes. I then need to step between 7 to 58 steps or 51 different methods. I then stitch the subframes together into the big frame.
+I don't have enough memory to generate code 505 (580 - 75) methods.
 
-So my player during initalization generated 51 different methods that "optimally" stepped between 7 and 58 steps.
+However what I can do is splitting the frame into smaller subframes of say 100 bytes. I then need to step between 7 to 58 steps or 51 different methods. I then stitch the subframes together into the final frame.
+
+My player during initalization generated 51 different methods that "optimally" stepped between 7 and 58 steps.
 
 If I during a frame needed to step 145 steps I switched between calling the 14 and 15 step function so I ended up at 145 steps in the full frame.
 
@@ -321,3 +331,221 @@ With this technique I was able to implement my first 50kHz routine that had a fi
 
 I was very satisified.
 
+## Utilizing the LCM1992
+
+I was satisifed with the player but I continued tinkering on it as there was now several good 50kHz players out there.
+
+The Amiga had 4 channels with independent pitch and volume control. The pitch control on Atari STE was to coarse to help but there was independent volumne control for left & right channel on STE through a chip known as the LCM1992.
+
+The chip was finicky to use and I was confused with documentation on how should translate the Amiga volume control to the LCM1992 but after recomputing the tables in the documentation it was a fairly straight forward linear relationship.
+
+But since I mixed two channels together in order to make use of the chip I had to select the channel with the highest volume, set the LCM1992 to the matching volume and recompute the secondary channel volume in relation to it.
+
+This means the code for the primary channel looked something like this for 25kHz
+
+```asm
+move.b  (a0)+, d0       ; Read sample, on 50kHz player one could post increment
+                        ; the register to save clock cycles
+move.b  d0, $0(a1)      ; Write sample
+move.b  d0, $2(a1)      ; Write sample
+```
+
+The secondary channel looked something like this
+```asm
+move.b  (a0)+, d0       ; Read sample, on 50kHz player one could post increment
+                        ; the register to save clock cycles
+move.b  (a1,d0.b), d0   ; Do volume calculation, divided by 2 implictly
+add.b   d0, $0(a1)      ; Write sample
+add.b   d0, $2(a1)      ; Write sample
+```
+
+With these improvements the player landed on about 63% CPU for 50kHz player.
+
+## ProTracker and the magic E instruction
+
+Up to this point I had written and maintained a NoiseTracker player based on Dr. Doom player which was reasonably compliant and performant.
+
+![ProTracker for Amiga](images/protracker.png)
+
+But ProTracker was taking of more and more on the Amiga scene and many modules didn't sound quite right with NoiseTracker.
+
+I tried to implement the ProTracker player but I ran into serious issues with the E instruction which in NoiseTracker was quite simple but in ProTracker could do weird things.
+
+There was especially one effect where I just couldn't understand the code.
+
+In the end I gave up and pt_src3.s contains a slightly patched ProTracker player plus my Paula emulator.
+
+The ProTracker code wasn't very fast but I accepted that compared to the Paula emulator the tiem it took wasn't very relevant.
+
+## The Gurgelkvack "convent" 1992
+
+![Gurgelkvack "convent" from Reine](images/gurgelkvack.jpg)
+> We learnt later that "convent" in english didn't mean what we thought it did.
+
+Summer 1992 Impulse arranged the first Impulse demo party. We had great ambitions but not many turned up. Still we had fun and in the end I think we all thought it was a success. The pizza guy was less pleased as he had stocked up in anticipation of several hundred hungry nerds buying pizza.
+
+
+
+## Motorola Inside'93
+
+![Nerds playing games](images/motorola_inside.JPG)
+> Me holding my beloved calculator, Johan is playing some game.
+
+Because Gurgelkvack'92 was fun we followed up next summer with Motorola Inside'93.
+
+Here [Excellence in Art](https://demozoo.org/sceners/2101/) released his [TalkTalk](https://demozoo.org/productions/59421/) demo which because I thought was outstanding not only because it used a version of my player, or that it was released at our lame party although it certainly helped.
+
+I think [TalkTalk](https://demozoo.org/productions/59421/) has a cool and for its time ground-breaking design and still enjoyable to watch. As a hacker very entrenched in writing optimized code and hardly being able to finish anything because of it this was an eye-opener for me.
+
+Code don't matter, what matter is the impression you make and [TalkTalk](https://demozoo.org/productions/59421/) made a significant impression on me.
+
+Another important event for me at Motorala Inside'93 was a chat with [Blade](https://demozoo.org/sceners/2500/) from [New Core](https://demozoo.org/groups/2218/) where we discussed STE players. [Blade](https://demozoo.org/sceners/2500/) later released [Octalyzer STE](https://demozoo.org/productions/73259/) so he is very knowledgeable.
+
+The [Blade](https://demozoo.org/sceners/2500/) player was very performant and utilized an improved way to calculate volume. If I remember correctly at the time it looked a bit like this
+
+```asm
+move.b (a0)+,d0   ; Read channel #0, uses LCM1992 for volume control
+move.b (a1)+,d1   ; Read channel #1
+move.l d1,a5      ; Move d1 to a5 to read indirectly
+add.b (a5),d0     ; Read volume corrected sample and mix with channel #0
+move.b d0,(a4)+   ; Write left channel
+move.b (a2)+,d0   ; Read channel #2, uses LCM1992 for volume control
+move.b (a3)+,d2   ; Read channel #3
+move.l d2,a5      ; Move d2 to a5 to read indirectly
+add.b (a5),d0     ; Read volume corrected sample and mix with channel #2
+move.b d0,(a4)+   ; Write right channel
+```
+
+The [Blade](https://demozoo.org/sceners/2500/) player of course relied on self-generating code and as a preprocess step it wrote the post-increments from a frequency table into the code so the input samples was stepped correctly.
+
+The code about takes about 45% CPU and the preprocess step took as far as I remember around ~10% so in total 55% CPU which was faster than my currently best player.
+
+# A sleep deprivation induced epiphany
+
+I left [Blade](https://demozoo.org/sceners/2500/) and walked to my place.
+
+The [Blade](https://demozoo.org/sceners/2500/) player was good, perhaps too good. I didn't like it obviously as I had a hacker ego.
+
+I was tired due to not sleeping which is the custom at demo parties.
+
+My player had some advantages in that it would optimize sample reads but it was slow on mixing. The [Blade](https://demozoo.org/sceners/2500/) player that mixed all channels at once could avoid reads and writes that way.
+
+I was thinking to myself that even if I incorporated the improved volume calculation my player might be faster for certain songs but not overall.
+
+*I needed something new.*
+
+At that moment the entire design for pt_src3.s came to me. I knew how I would eliminate a lot of waste and the result would combine the benefit of my player with the benefit of the [Blade](https://demozoo.org/sceners/2500/) player.
+
+The code would be much more complicated than any of my previous players and consume a lot of memory but it was doable.
+
+I just had one big problem that was I unsure if it even had a solution.
+
+# The creation of pt_src3.s
+
+The key improvement of pt_src3.s over my old players is that instead of taking 1 channel at a time pt_src3.s takes 2 channel at a time.
+
+That eliminates the need to read the sample from output buffer and mix it again.
+
+It does complicate things though and I had split into even smaller subframes to not run out of memory.
+
+Each subframe is now 40 bytes and for each channel the player stepped between 3 to 26 bytes so it needs 23 combinations per channel that is 23*23 = 529 methods.
+
+Then depending on the channel pitch the player pick the correct combination and mix two channels at the same time. The player handles fractional steps by switching between different combinations per subframe.
+
+This means the resulting code looks something like this in the case we are going to repeat each sample 3 times.
+
+```asm
+move.b  (a0)+, d0   ; Read channel #0
+move.b  (a1)+, d1   ; Read channel #1
+move.l  d1, a3      ; Blade's improved volume calculation
+add.b   (a3), d0    ; Mix channels
+move.b  d0, $0(a2)  ; Write sample
+move.b  d0, $2(a2)  ; Write sample
+move.b  d0, $4(a2)  ; Write sample
+```
+
+But the player also optimized reads when the channels went in difference pace.
+
+Let's assume channel #0 repeat each sample twiche and channel #1 repeats each sample 10 times.
+
+```asm
+move.b  (a0)+, d0   ; Read channel #0
+move.b  (a1)+, d1   ; Read channel #1
+move.l  d1, a3      ; Blade's improved volume calculation
+move.b  (a3), d1    ; Read volume corrected sample
+add.b   d1, d0      ; Mix channels
+move.b  d0, $0(a2)  ; Write sample
+move.b  d1, $2(a2)  ; Write sample
+
+move.b  (a0)+, d0   ; Read channel #0
+                    ; d1 already contains the correct sample
+add.b   d1, d0      ; Mix channels
+move.b  d0, $0(a2)  ; Write sample
+move.b  d1, $2(a2)  ; Write sample
+```
+
+That way the player ended up reading close to optimally.
+
+The code got a lot more complex but the performance started to look real good.
+
+But I still hadn't solved a big problem.
+
+## Reading the manual out of desperation
+
+The problem was writing the samples was slower than the Blade player. The Blade player could utilize post increment of the address register when writing the samples which gave a free increment.
+
+I had to use indexed writes which was 4 cycles slower and took more memory.
+
+4 cycles don't sound too bad but since the player had to write 100,000 samples each second those 4 cycles was 5% lost CPU time.
+
+Very annoying.
+
+So I read the 68000 manual in some vain hope there was some hidden address mode I didn't know about that could help me.
+
+I guess I got lucky because I found a gem.
+
+Up to this point I think my players didn't feature anything unique. They were ok and pt_src3.s would be good but thanks to combining a bunch of ideas into one complicated mess.
+
+However, what I found I think is a trick seldomly used and I certainly hadn't seen it before.
+
+The problem was this.
+
+I wrote the left and right channel separately. Because the channels were interleaved I needed to write a byte and increment by 2.
+
+If I did `move.b d0,(a0)+` a0 is only increment by 1. Not good.
+
+If I did `move.w d0,(a0)+` a0 is incremented by two but it only works for the right channel as it overwrites the higher byte and in addition if a0 is an odd address the 68000 throws an exception.
+
+So I did `move d0,$0(a0)` and used self-generating code to generate increments by 2 but this took 4 cycles extra and took more memory.
+
+What I found was a peculiar property of the stack pointer. In order to protect the stack pointer from ending up pointing to an odd address which would crash if you tried to push a 16bit or 32bit word if you did `move.b d0,(sp)+` the stack pointer was actually incremented by 2!
+
+What I didn't know was what happened if the stackpointer was an odd address already, would it increment by 1 or 2?
+
+It turned out it incremented by 2 regardless if the stackpointer had an even or odd address which is _exactly_ what I needed.
+
+Now the code became something like this:
+
+```asm
+move.b  (a0)+, d0   ; Read channel #0
+move.b  (a1)+, d1   ; Read channel #1
+move.l  d1, a3      ; Blade's improved volume calculation
+add.b   (a3), d0    ; Mix channels
+move.b  d0, (sp)+   ; Write sample
+move.b  d0, (sp)+   ; Write sample
+move.b  d0, (sp)+   ; Write sample
+```
+
+Most of the player code needs to run into the 68000 supervisor mode in order to access the sound chip hardware. Putting the supervisor stackpointer to an odd address is not the best in case there's an interrupt and the 68000 tries to write return addresses to the stack. That will crash.
+
+That's why pt_src3.s very randomly switches to user mode in the middle of it all. The usermode stackpointer can "safely" point to an odd address. To switch back to supervisor mode the trap #0 vector is setup to point to the continuation.
+
+## Post Scriptum: Legacy
+
+## Post Scriptum: My Monochrome screen
+## Post Scriptum: 50 kHz Octalyzer plugin
+## Post Scriptum: Solving the spikeness
+## Post Scriptum: Amiga Octalyzer plugin
+## Post Scriptum: pt_src3.s refactored
+## Post Scriptum: How do you get started today?
+## Post Scriptum: Shaders
