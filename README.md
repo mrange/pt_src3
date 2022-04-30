@@ -3,6 +3,7 @@
 ## 1993-08-22, Göteborg
 
 ![Chalmers Univeristy, Public Domain](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Chalmers_University_of_Technology.jpg/1024px-Chalmers_University_of_Technology.jpg)
+> Chalmers, were I studied 1993-1998. For me a very positive period.
 
 In my small university dorm room I completed pt_src3.s right before I was about to start my university studies at Chalmers.
 
@@ -11,6 +12,7 @@ pt_src3.s was the amalgam of all the best ideas I had seen for Paula emulators f
 At the time of the release I felt the Atari STE was definitely fading away in favour of the PC. I thought pt_src3.s was a good paula emulator across several metrics but because of the disappearance of the Atari scene it would never see. I uploaded the pt_src3.s to ftp.sunet.se and ftp.funet.fi and turned off my Atari STE.
 
 ![Atari STF, CC-BY-2.5 Bill Bertram](https://upload.wikimedia.org/wikipedia/commons/3/39/Atari_1040STf.jpg)
+> Atari 1040STF, very similar look to the somewhat improved Atari 1040STE I had.
 
 ## Summer 2000, Göteborg
 
@@ -25,6 +27,7 @@ He had some ideas on how to address the problem and I didn't hear much more.
 I was later blown away about what he used it for when I saw [STNICCC 2000 Demo](https://demozoo.org/productions/59549/)([Youtube](https://www.youtube.com/watch?v=nqVJWFNpTqA&t=20s)).
 
 ![STNICCC 2000 Demo](images/stnicc.png)
+> Screen from STNICC 2000.
 
 A life-time achievment unlocked for me although I consider the Paula emulator a very small part of that demo.
 
@@ -37,13 +40,14 @@ This is my 10th attempt of writing that story.
 The first time I saw a computer (Commodore 64) I was hooked. I was drawn to computers instinctively.
 
 ![Commodore 64](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/1024px-Commodore-64-Computer-FL.jpg)
+> A friend of my had a Commodore 64 very much like this.
 
 I almost exclusively played games but tinkered in basic programming but I didn't understand much. I was greatly disappointed after pain stakingly typing in a bubble sort routine and there was no bubbles to be seen on screen.
 
 My mind was blown by the peek/poke listings so common in computer magazines.
 
 ![Code type in from biosrhythm.com](images/code-type-in.jpg)
-> How can anyone program this way? It makes no sense.
+> I was stunned: How can anyone program this way? It makes no sense.
 
 Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor, 640x400 71 hz and paper white.
 
@@ -59,6 +63,7 @@ A very important turning point for me was a summer trip through Sweden with my f
 Before the trip my father had given me an advanced calculator that had a BASIC interpreter.
 
 ![Casio FX730P from www.calculatormuseum.nl/calculators/casio_fx730p1.JPG](images/casio_fx730p1.jpg)
+> The Casio FX730P came with a BASIC interpreter and nothing else so I had to learn BASIC to make games.
 
 As there was no games on the calculator I was learning BASIC while sitting in the back of the car during the summer trip and programmed a slot machine game, guess the number and a very simple shoot-em-up.
 
@@ -69,13 +74,15 @@ What I learnt was that I enjoyed programming and when I returned home I started 
 As I was interested in games and graphics after awhile I had moved on from [GFA Basic](https://en.wikipedia.org/wiki/GFA_BASIC) to [STOS BASIC](https://en.wikipedia.org/wiki/STOS_BASIC) which was a basic version intended to write games and graphics in.
 
 ![STOS loading screen](https://upload.wikimedia.org/wikipedia/en/a/a9/STOS_BASIC_loading_screen.png)
+> STOS BASIC loading screen
 
 ![STOS editor from www.atarimania.com](images/stos.gif)
+> STOS BASIC editor, IIRC you could draw graphics using direct commands that allowed for experimentation
 
 However when a friend showed me [The Cuddly Demos by The Carebears](https://demozoo.org/productions/76257/)([youtube](https://www.youtube.com/watch?v=5pRelt_CPVk)) my mind was blown. I thought:
 
 ![The Cuddly demos from demozoo](images/cuddly_demos.png)
-> I can never make this in STOS. I need to learn assembler!
+> "I can never make this in STOS. I need to learn assembler!"
 
 I know now that people have done amazing thing in STOS, maybe even on the level of The Cuddly Demos but this is what got me into assembler programming.
 
@@ -84,11 +91,15 @@ I know now that people have done amazing thing in STOS, maybe even on the level 
 Lot of great Atari Software came through germany and somehow I got hold of a german version of [DevPac from HiSoft Systems](https://en.wikipedia.org/wiki/HiSoft_Systems). Which assembler is the best is subjective but I loved Dev Pac and the debugger.
 
 ![DevPac from atarimania](images/High_Devpac_02.jpg)
+> DevPac source code editor, I remember it as awesome.
+
 ![DevPac debugger from atarimania](images/debugger.png)
+> DevPac debugger, I still remember some keyboard commands such as setting break points and running.
 
 I learnt the basics of assembler programming from [Svenska Hemdatornytt](https://sv.wikipedia.org/wiki/Svenska_Hemdatornytt)(Swedish home computer news) and their series "Learn assembler programming".
 
 ![Hemdatornytt from internet archive](https://archive.org/services/img/SvenskaHemdator1990-03/full/pct:200/0/default.jpg)
+> Hemdatornytt had a comic called Atari STen (swedish pun) made by a young Johan Wanloo
 
 I still remember the intense feeling when I got my first scroll text working.
 
@@ -101,6 +112,7 @@ My father got me a summer job on a oil tanker which itself was pretty cool but t
 To help me unlock the power of the STE I had the book "Atari ST/STE - Hårdfakta" that had been updated to contain information about the STE specific hardware.
 
 !["Atari Hardfacts"](images/hardfacts.png)
+> My copy of Hårdfakta was falling apart from constant flicking through the pages
 
 ## TCB Tracker
 
@@ -108,7 +120,8 @@ The Carebears, which I idolized due to The Cuddle Demos, was releasing their own
 
 The TCB Tracker was rumoured to have an STE enhanced mode that utilized the Atari STE new digital to audio soundchip.
 
-![TCB Tracker from internet archibe](images/tcbtracker.png)
+![TCB Tracker from internet archive](images/tcbtracker.png)
+> TCB Tracker was a bit of a disappointment to me as I was hoping for great STE mode. On the other hand the lack of said mode spurred me to try to create my own.
 
 I was however not impressed by the sound quality. The sound was more crisp in the Atari ST mode compared to the Atari STE mode.
 
@@ -133,6 +146,7 @@ In order to get access to maximum amount of songs I wanted my player to be a Noi
 But I needed someway to get me started.
 
 ![Tristar cracktro from youtube](images/cracktro.png)
+> A common cracktro at the time but unfortunately not the Dr. Doom one.
 
 Games were typically protected in various way to prevent piracy. These protections were removed and the games were released on "Compacted Disks" containing several games on a single floppy. This was called cracking a game and the people doing so often put a small "cracktro" with contact info, cool graphics and music before loading the game.
 
@@ -210,13 +224,15 @@ My 68k instructions timings is a bit rusty but I think the above code evaluates 
 ## Impulse and the Brainless Institute Party - Going to my first demo party
 
 ![Impulse from Reine](images/impulse.jpg)
+> Mandus (Glimglam) in front our Impulse logo
 
 !["Young Nerds" from Reine](images/young_nerds.JPG)
+> From left to right, Mårten (Lance) probably optimizing some polygon filler, Johan (Jez), Mandus (Glimglam). Reine (Longshot) likely holding the camera
 
 I had a this time started to hang around with the guys in [Impulse](https://demozoo.org/groups/29352/). We are not talking TCB, TLB or Omega level here, not even close but we had fun and we went to our first demo party in Skövde together.
 
 ![Brainless from Reine](images/brainless_party.jpg)
-> Brainless Institute party 1992
+> Reine (Longshot) at Brainless Institute party 1992
 
 Being quite the introvert the demo party was stressful but also quite exciting to see so many nerds with similar interest. Where I lived at the time computers were rare and there was little interest in them.
 
@@ -229,6 +245,7 @@ As 25kHz was lower than the Amiga's max frequency there was a case for making a 
 I was therefore very surprised when I at the demo party saw Audio Sculpture which claimed to have a 50kHz mode.
 
 ![Audio Sculpture tracker from pouet](https://content.pouet.net/files/screenshots/00029/00029334.png)
+> Audio sculpture was the first tracker I saw that had the legendary 50kHz mode.
 
 As many hackers I had already developed a bit of an unmotivated ego and seeing someone else achieve what I thought was impossible was a blow to that ego.
 
@@ -366,6 +383,7 @@ With these improvements the player landed on about 63% CPU for 50kHz player.
 Up to this point I had written and maintained a NoiseTracker player based on Dr. Doom player which was reasonably compliant and performant.
 
 ![ProTracker for Amiga](images/protracker.png)
+> Lots of musicians like Ugress that started on Amiga trackers and later became iconic artists.
 
 But ProTracker was taking of more and more on the Amiga scene and many modules didn't sound quite right with NoiseTracker.
 
@@ -380,16 +398,14 @@ The ProTracker code wasn't very fast but I accepted that compared to the Paula e
 ## The Gurgelkvack "convent" 1992
 
 ![Gurgelkvack "convent" from Reine](images/gurgelkvack.jpg)
-> We learnt later that "convent" in english didn't mean what we thought it did.
+> We later learnt that "convent" in english didn't mean what we thought it did.
 
 Summer 1992 Impulse arranged the first Impulse demo party. We had great ambitions but not many turned up. Still we had fun and in the end I think we all thought it was a success. The pizza guy was less pleased as he had stocked up in anticipation of several hundred hungry nerds buying pizza.
-
-
 
 ## Motorola Inside'93
 
 ![Nerds playing games](images/motorola_inside.JPG)
-> Me holding my beloved calculator, Johan is playing some game.
+> Mårten (Lance) holding my beloved calculator, Johan (Jez) is playing some game.
 
 Because Gurgelkvack'92 was fun we followed up next summer with Motorola Inside'93.
 
