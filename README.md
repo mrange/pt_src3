@@ -52,7 +52,7 @@ My mind was blown by the peek/poke listings so common in computer magazines.
 Eventually I inherited my father's Atari 260 (extended to 1 Meg of RAM) and the monochrome hi-res monitor, 640x400 71 hz and paper white.
 
 ![Atari 520 ST with a monochrome monitor](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Atari_520_ST_%2B_with_monochrome_monitor_SM_124.jpg/1024px-Atari_520_ST_%2B_with_monochrome_monitor_SM_124.jpg)
-> The computer on the picture is an Atari 520 ST but the Atari 260 ST looked exactly like that except different model number.
+> The computer on the picture is an Atari 520 ST but the Atari 260 ST looked exactly like that except different model number. The Atari in the picture also has a german layout, just like my 260 ST.
 
 I still mostly played games while tinkering with programming but didn't see much point in programming as I thought I could just buy the games I needed.
 
