@@ -561,12 +561,52 @@ Most of the player code needs to run into the 68000 supervisor mode in order to 
 
 That's why pt_src3.s very randomly switches to user mode in the middle of it all. The usermode stackpointer can "safely" point to an odd address. To switch back to supervisor mode the trap #0 vector is setup to point to the continuation.
 
+## Wrapping up pt_src3.s and my "career" as an Atari hacker
+
+It took significant amount of time to complete pt_src3.s but I got it done right before I started university. I was very happy with the performance and felt the sound quality was decent. The performance did fluctuate wildly which is a problem but I had some ideas on how to even it out somewhat.
+
+However, I felt that university would require a significant amount of focus on my part and at the same time the Atari scene felt like it was fading away.
+
+At university I was exposed to email and ftp for the first time so I uploaded pt_src3.s to a bunch of sites and signed off.
+
+![Mårten (Lance) around 1995 from Reine](images/farewell.jpg)
+
+Lance / Mårten Rånge - 1993/08/22
+
 ## Post Scriptum: Legacy
 
+TBW
+
 ## Post Scriptum: My Monochrome screen
+
+TBW
+
 ## Post Scriptum: 50 kHz Octalyzer plugin
+
+I had various discussions with [Blade](https://demozoo.org/sceners/2500/) regarding his [Octalyzer STE](https://demozoo.org/productions/73259/) project and he said he made a mod player interface called UCDM UMP.
+
+It was reasonable straight to implement the 4 channel UMP plugin but my calculations showed that a 50kHz 8 channel UMP plugin should be possible.
+
+While the 8 channel UMP plugin was fiddly to get to work and took alot of memory the calculations held up and it was possible to run on a 8Mhz Atari STe.
+
+The binaries are available on [github](https://github.com/ggnkua/Atari_ST_Sources/tree/master/ASM/Lance!/UCDM) but unfortunately I lost the source code. I am kicking myself over that.
+
 ## Post Scriptum: Solving the spikeness
+
+TBW
+
 ## Post Scriptum: Amiga Octalyzer plugin
+
+TBW
+
 ## Post Scriptum: pt_src3.s refactored
+
+TBW
+
 ## Post Scriptum: How do you get started today?
+
+TBW
+
 ## Post Scriptum: Shaders
+
+TBW
