@@ -99,7 +99,12 @@ Lot of great Atari Software came through germany and somehow I got hold of a ger
 I learnt the basics of assembler programming from [Svenska Hemdatornytt](https://sv.wikipedia.org/wiki/Svenska_Hemdatornytt)(Swedish home computer news) and their series "Learn assembler programming".
 
 ![Hemdatornytt from internet archive](https://archive.org/services/img/SvenskaHemdator1990-03/full/pct:200/0/default.jpg)
-> Hemdatornytt had a comic called Atari STen (swedish pun) made by a young Johan Wanloo
+
+Hemdatornytt had a comic called [Atari STen](http://hemdatornytt2.selda.se/atari-sten-arkiv/) (swedish pun) made by a young [Johan Wanloo](https://en.wikipedia.org/wiki/Johan_Wanloo)
+
+!["Atari STen from hemdatornytt"](images/atari_sten.png)
+> "Remember kids, do your homework, eat your spinach and teach yourself assembler programming" - Atari STen
+
 
 I still remember the intense feeling when I got my first scroll text working.
 
