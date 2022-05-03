@@ -102,7 +102,7 @@ I learnt the basics of assembler programming from [Svenska Hemdatornytt](https:/
 
 Hemdatornytt had a comic called [Atari STen](http://hemdatornytt2.selda.se/atari-sten-arkiv/) (swedish pun) made by a young [Johan Wanloo](https://en.wikipedia.org/wiki/Johan_Wanloo)
 
-!["Atari STen from hemdatornytt"](images/atari_sten.png)
+![Atari STen from hemdatornytt](images/atari_sten.png)
 > "Remember kids, do your homework, eat your spinach and teach yourself assembler programming" - Atari STen
 
 
@@ -249,7 +249,7 @@ As 25kHz was lower than the Amiga's max frequency there was a case for making a 
 
 I was therefore very surprised when I at the demo party saw Audio Sculpture which claimed to have a 50kHz mode.
 
-![Audio Sculpture tracker from pouet](https://content.pouet.net/files/screenshots/00029/00029334.png)
+![Audio Sculpture tracker from pouet](images/audio_sculpture.png)
 > Audio sculpture was the first tracker I saw that had the legendary 50kHz mode.
 
 As many hackers I had already developed a bit of an unmotivated ego and seeing someone else achieve what I thought was impossible was a blow to that ego.
@@ -571,7 +571,7 @@ At university I was exposed to email and ftp for the first time so I uploaded pt
 
 ![Mårten (Lance) around 1995 from Reine](images/farewell.jpg)
 
-Lance / Mårten Rånge - 1993/08/22
+Lance / Mårten Rånge - 1990 to 1993/08/22
 
 ## Post Scriptum: Legacy
 
