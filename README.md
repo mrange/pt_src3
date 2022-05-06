@@ -398,7 +398,7 @@ There was especially one effect where I just couldn't understand the code.
 
 In the end I gave up and pt_src3.s contains a slightly patched ProTracker player plus my Paula emulator.
 
-The ProTracker code wasn't very fast but I accepted that compared to the Paula emulator the tiem it took wasn't very relevant.
+The ProTracker code wasn't very fast but I accepted that compared to the Paula emulator the time it took wasn't very relevant.
 
 ## The Gurgelkvack "convent" 1992
 
@@ -441,7 +441,7 @@ The [Blade](https://demozoo.org/sceners/2500/) player of course relied on self-g
 
 The code takes about 45% CPU and the preprocess step took as far as I remember around ~10% so in total 55% CPU which was faster than my currently best player.
 
-# A sleep deprivation induced epiphany
+# A sleep deprived induced epiphany
 
 I left [Blade](https://demozoo.org/sceners/2500/) and walked to my place.
 
