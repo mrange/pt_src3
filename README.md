@@ -744,3 +744,9 @@ Thanks, I don't check the feed that often but this was a goldmine. You are were 
 Lots of retro on my mind now listening to the latest @retrohouruk and just read great post from @range_marten about emulating the Amiga Paula chip with high fidelity on the Atari
 
 > Thanks alot Mattias. Let's meet up next time I am in Gothenburg.
+
+### Rolf M
+
+Nice writeup, bringing back memories from a time long gone (although my period was a bit earlier and only in 8 bits...)
+
+> Thank you Rolf, 16 bit is too easy, 8 bit computing is the real challenge amirite?
