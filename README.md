@@ -405,7 +405,15 @@ The ProTracker code wasn't very fast but I accepted that compared to the Paula e
 ![Gurgelkvack "convent" from Reine](images/gurgelkvack.jpg)
 > We later learnt that "convent" in English didn't mean what we thought it did.
 
-Summer 1992 Impulse arranged the first Impulse demo party. We had great ambitions but not many turned up. Still we had fun and in the end I think we all thought it was a success. The pizza guy was less pleased as he had stocked up in anticipation of several hundred hungry nerds buying pizza.
+Summer 1992 Impulse arranged the first Impulse demo party. We had great ambitions and even booked a live-band, Akmepop, but not many turned up to our party.
+
+Still we had lots of fun and very little sleep so in the end I think we all thought it was a success and we got to know [No Crew](https://demozoo.org/groups/2220/) that was a bunch of nice guys.
+
+The pizza guy was less pleased as he had stocked up in anticipation of several hundred hungry nerds buying pizza.
+
+![Fully stocked on Coca-Cola from Reine](images/fully_stocked.jpg)
+> Johan(Jez) and Reine(Longshot) stocking up on Coca-Cola. We had about 2,000 cans of Coca-Cola and sold maybe 50.
+
 
 ## Motorola Inside'93
 
@@ -583,9 +591,9 @@ When writing the story I find it interesting that I still remember clearly the a
 
 I remember meeting and talking to other young nerds about assembler code although I don't always remember the names so if you feel left out I didn't mean to, feel free to post a PR with an update.
 
-One thing that truly blew my mind was when I read a blog post on DHS (I can't find it now. If someone knows what I mean please share) where a smart guy reversed engineered everything about pt_src3.s and improved upon it significantly. The pt_src3.s wasn't commented (why? assembler is so obvious amirite?) and it relies on a bunch of tricks and self generating code. I was very impressed and I read the blog post with much joy.
+One thing that truly blew my mind was when I read a blog post on by Paulo Simoes where he reversed engineered everything there is about pt_src3.s and improved upon it significantly. The original pt_src3.s wasn't commented (why? assembler is so obvious amirite?) and it relies on a bunch of tricks and self generating code. I was very impressed and I read the blog post with much joy. As an extra cherry on the top he [released a 12.5kHZ and 25kHz version](https://www.atari-forum.com/viewtopic.php?t=24718) of the player. I know how obscure pt_src3.s is so I am very impressed by this feat.
 
-Or this [github repo](https://github.com/robcowell/LanceReplay) by [RiFT](https://github.com/robcowell) where he fixes some bugs in the old pt_src3.s. I am amazed that the Atari ST scene 2022 seems more alive than it did in 1993.
+Or this [github repo](https://github.com/robcowell/LanceReplay) by [Mrs Beanbag/RiFT](https://github.com/robcowell) where she fixes some bugs in the old pt_src3.s. I am amazed that the Atari ST scene 2022 seems more alive than it did in 1993.
 
 Let's not forget about the amazing new productions like [FirST Love by Overlanders](https://www.youtube.com/) that to a hacker whose mind is stuck in 1993 seems impossible. The Atari ST also [sounds amazing](https://www.youtube.com/watch?v=TeCystriENs) these days in ways I never thought was possible.
 
@@ -640,7 +648,7 @@ As many have noted pt_src3.s had a fair amount of bugs, most of them I wasn't aw
 
 One thing I was aware of however was that certain mods sounded quite bad. I believe it was usually a sample with a short loop that was close to a sine wave where it was most appearant.
 
-I was hunting for this bug for a while but never managed to fix it. I am hopeful however when reading [RiFT's]([github repo](https://github.com/robcowell/LanceReplay)) comments about fixed bugs in the sample looping that blemish is finally stamped out now. Thank you guys, it has been bugging me for 30 years.
+I was hunting for this bug for a while but never managed to fix it. I am hopeful however when reading [Mrs Beanbag/RiFT]([github repo](https://github.com/robcowell/LanceReplay)) comments about fixed bugs in the sample loops that the blemish is finally stamped out now. I also know Paulo Simoes fixed a bunch of issues as well. Thank you, it has been bugging me for 30 years.
 
 ## Post Scriptum: Amiga Octalyzer plugin
 
@@ -669,3 +677,70 @@ However, I have the demo itch in me and want to do demos still. What I found tha
 Using tools like [kodelife from hexler](https://hexler.net/kodelife) it is very interactive and fun to write shader code which I share on [shadertoy](https://www.shadertoy.com/user/mrange). I don't think I am amazing at shader code but it give me joy.
 
 I even put a few [Impulse WebGL demos](http://mrange.github.io/) together.
+
+## Post Scriptum: Comments on this blog post.
+
+I received comments and correction for this blog post. I have only included your first name and the first character of your last name as a precaution if you are not ok to appear in this blog post.
+
+### Troed S of SYNC
+
+Many thanks for a very enjoyable read! Love the fact you used the stack-increment trick - had no idea
+
+I thought that trick was a newer discovery. I know I use it in the YM stream playback in Closure, but I didn't know about it back in the old days.
+Btw, since you reference the sprite record and your idea about rendering sound a few frames ahead - yes - that's indeed one of the tricks used for such records where CPU usage varies. It was also why demos with large filled 3D cubes already back then had them bounce between small and large size
+
+> Thank you very much for you comment Troed, I am glad you enjoyed the blog post and thanks for sharing some demo techniques.
+
+### Daniel H
+
+Awesome blog post! Thanks!
+
+> My pleasure Daniel
+
+### Wietze S
+
+That was fun to read! This year I was looking into modplayers, and I indeed know your modplayer to be reknowned for its sound quality. However to use it in a demo, is... troublesome, because all in all, it takes a lot of CPU. I found that Paulo Simoes (whom you are referring to in your article I believe), reworked your code to provide a somewhat faster playback routine in 12.5, 25 and 50khz playback. I took on this code myself to clean our some of the static asm structures he put in, to make it useable for a demo (imo anyhow). It can be found [here](https://github.com/ggnkua/Atari_ST_Sources/tree/master/ASM/SMFX/Lance) ; just to let you know you effort are living on in 2022. Kind regards and kind appreciation from the bearers of current scene fire.
+
+> Thank you Wietze for your kind comments and finding Paulo Simoes name for me. I couldn't remember but I have updated the blog post thanks to your info.
+
+### Fredrik O
+
+Your player is what inspired me to use the (sp)+ trick to write the color and luminance channels for the texture mapper in Wait.
+
+> I am glad your found some inspiration from the player. It sounds very interesting Fredrik how you were able to use the (sp)+ trick for a texture mapper. I would be very interested to learn more about that.
+
+### Frédéric S
+
+It's remember to me Paulo Simões who made some [great stuff](https://www.atari-forum.com/viewtopic.php?t=24718) with this player routs there are a long time.
+
+> Frédéric thanks alot for finding Paulo's post on Atari-Forum I will take a closer look to see if I can understand what he did.
+
+### Rob C of RiFT
+
+*she, not he - the fixes were implemented by the amazing Mrs Beanbag of RiFT. We appreciate the mention though. Greets from Bossman of RiFT
+
+> Rob, thanks for the correction my bad. I have updated the blog post accordingly. Please extend my apologies to Mrs Beanbag.
+
+### Benoit D of Overlanders
+
+Thanks a lot for this write-up Mårten Rånge. I loved reading you. It illustrates perfectly how iterative the optimization’s process is, which corresponds to what we described in our FirST Love’s making-of (btw, thanks for the notice. We’re very honored). It’s also very impressive to see that your work has been carried on by others later on. Very well done.
+
+### Jean-Sébastien G of Overlanders
+I double that, thanks for the mention Mårten Rånge
+
+> Thanks alot for your comments. Part of my motivation for writing the story is showing that a result seldomly springs out of singular mind in the most optimal shape. It's a long process that involves talking and being inspired by other people. Sometimes the process can feel long and difficult when you make little progress but the feeling when you finally break through makes up for it 10 times. I wanted with this blog post give a shout-out to the people that inspired me knowingly or unknowingly.
+
+### Henning S, fellow Atarist at Schibsted
+
+(Translated)
+
+Thanks, I don't check the feed that often but this was a goldmine. You are were into the details and was doing Atari for longer than me but I recognize alot of it. We even look a bit like eachother in one of the pictures, turtleneck and glasses.
+
+> Thanks alot Henning. I suppose the picture in question is this:
+![Mårten (Lance) around 1995 from Reine](images/farewell.jpg)
+
+### Mattias K, fellow 68K fantast (Amiga)
+
+Lots of retro on my mind now listening to the latest @retrohouruk and just read great post from @range_marten about emulating the Amiga Paula chip with high fidelity on the Atari
+
+> Thanks alot Mattias. Let's meet up next time I am in Gothenburg.
