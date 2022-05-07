@@ -632,7 +632,7 @@ It was reasonably straightforward to implement the 4 channel UMP plugin but my c
 
 While the 8 channel UMP plugin was fiddly to get to work and took alot of memory the calculations held up and it was possible to run on a 8Mhz Atari STe.
 
-The binaries are available on [github](https://github.com/ggnkua/Atari_ST_Sources/tree/master/ASM/Lance!/UCDM) but unfortunately I lost the source code. I am kicking myself over that.
+The binaries are available on [github](https://github.com/ggnkua/Atari_ST_Sources/tree/master/ASM/Impulse/UCDM) but unfortunately I lost the source code. I am kicking myself over that.
 
 Youtube has a few [videos](https://www.youtube.com/watch?v=pfMrvI2sg90&t=241s) featuring the old Lance UCDM plugin.
 
@@ -756,3 +756,18 @@ Lots of retro on my mind now listening to the latest @retrohouruk and just read 
 Nice writeup, bringing back memories from a time long gone (although my period was a bit earlier and only in 8 bits...)
 
 > Thank you Rolf, 16 bit is too easy, 8 bit computing is the real challenge amirite?
+
+### George (GGN)
+Hi there,
+
+First off: many thanks for releasing the player source all these years ago, it was (and still is) a landmark in STE audio! I even used it in a [small production](https://www.pouet.net/prod.php?which=7872) back in 2000 or so .
+
+I just wanted to give you a heads up since you linked my source repository in your readme.
+pt_src3/README.md
+
+I had your source code in a folder called "Lance!" but, from what I understand, by the time you already were a member of Impulse. So I thought I'd move the source to an "Impulse" folder instead: https://github.com/ggnkua/Atari_ST_Sources/tree/master/ASM/Impulse/UCDM
+So, that's pretty much it. If you think I should move it back as it was, just let me know. I just acted on an impulse (har har) without asking you first.
+
+Again, thanks much for the player and the writeup!
+
+> George, thank you for your kind words. I have updated the link in the blog accordingly. I always appreciate a good pun. Keep up the good work, sir.
