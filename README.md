@@ -409,6 +409,9 @@ Summer 1992 Impulse arranged the first Impulse demo party. We had great ambition
 
 Still we had lots of fun and very little sleep so in the end I think we all thought it was a success and we got to know [No Crew](https://demozoo.org/groups/2220/) that was a bunch of nice guys.
 
+![Megalame Gurgel Kvack Demo by Inner Circuit Explorers from Pouet](images/ice.gif)
+> Megalame Gurgel Kvack Demo by Inner Circuit Explorers released at Gurgelkvack Convention 1992
+
 The pizza guy was less pleased as he had stocked up in anticipation of several hundred hungry nerds buying pizza.
 
 ![Fully stocked on Coca-Cola from Reine](images/fully_stocked.jpg)
