@@ -678,6 +678,12 @@ Using tools like [kodelife from hexler](https://hexler.net/kodelife) it is very 
 
 I even put a few [Impulse WebGL demos](http://mrange.github.io/) together.
 
+## Post Scriptum: My Casio FX-730P is ALIVE
+
+I dug out the old Casio FX-730P that was the start of it all and plugged some new batteries into it. It started flawlessly after 30 years of silence.
+
+![My Casio FX-730P is ALIVE](images/it_is_alive.jpg)
+
 ## Post Scriptum: Comments on this blog post.
 
 I received comments and correction for this blog post. I have only included your first name and the first character of your last name as a precaution if you are not ok to appear in this blog post.
@@ -734,7 +740,7 @@ I double that, thanks for the mention Mårten Rånge
 
 (Translated)
 
-Thanks, I don't check the feed that often but this was a goldmine. You are were into the details and was doing Atari for longer than me but I recognize alot of it. We even look a bit like eachother in one of the pictures, turtleneck and glasses.
+Thanks,   I don't check the feed that often but this was a goldmine. You are were into the details and was doing Atari for longer than me but I recognize alot of it. We even look a bit like eachother in one of the pictures, turtleneck and glasses.
 
 > Thanks alot Henning. I suppose the picture in question is this:
 ![Mårten (Lance) around 1995 from Reine](images/farewell.jpg)
