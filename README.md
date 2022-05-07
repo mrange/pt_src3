@@ -407,7 +407,10 @@ The ProTracker code wasn't very fast but I accepted that compared to the Paula e
 
 Summer 1992 Impulse arranged the first Impulse demo party. We had great ambitions and even booked a live-band, Akmepop, but not many turned up to our party.
 
-Still we had lots of fun and very little sleep so in the end I think we all thought it was a success and we got to know [No Crew](https://demozoo.org/groups/2220/) that was a bunch of nice guys.
+Still we had lots of fun and very little sleep so in the end I think we all thought it was a success and we got to know [NoCrew](https://demozoo.org/groups/2220/) that was a bunch of nice guys that helped us organize Motorola Inside'93.
+
+![Omega Snake by NoCrew from Youtube](images/omega_snake.JPG)
+> [Omega Snake](https://www.youtube.com/watch?v=VvsqAyt2QFc) by NoCrew released at Gurgelkvack Convention 1992
 
 ![Megalame Gurgel Kvack Demo by Inner Circuit Explorers from Pouet](images/ice.gif)
 > Megalame Gurgel Kvack Demo by Inner Circuit Explorers released at Gurgelkvack Convention 1992
@@ -423,7 +426,7 @@ The pizza guy was less pleased as he had stocked up in anticipation of several h
 ![Nerds playing games](images/motorola_inside.JPG)
 > Mårten (Lance) holding his beloved calculator, Johan (Jez) is playing some game.
 
-Because Gurgelkvack'92 was fun we followed up next summer with Motorola Inside'93.
+Because Gurgelkvack'92 was fun we followed up next summer with Motorola Inside'93 that Impulse and [NoCrew](https://demozoo.org/groups/2220/) organized together.
 
 Here [Excellence in Art](https://demozoo.org/sceners/2101/) released his [TalkTalk](https://demozoo.org/productions/59421/) demo which because I thought was outstanding not only because it used a version of my player, or that it was released at our lame party although it certainly helped.
 
