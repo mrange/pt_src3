@@ -771,3 +771,10 @@ So, that's pretty much it. If you think I should move it back as it was, just le
 Again, thanks much for the player and the writeup!
 
 > George, thank you for your kind words. I have updated the link in the blog accordingly. I always appreciate a good pun. Keep up the good work, sir.
+
+### Arnaud C (Leonard/Oxygene)
+
+very nice article! always interesting to read about our passion. Btw pt_src3 mixing code is still a masterpiece today
+
+> Thank you for your kind words. Reading your article on the [sprite records](http://leonard.oxg.free.fr/record16/record16.html) was the first time I thought "I should write about my player!". It took many false starts until I finally got something I could publish.
+
