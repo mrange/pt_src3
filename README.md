@@ -103,7 +103,7 @@ I learnt the basics of assembler programming from [Svenska Hemdatornytt](https:/
 Hemdatornytt had a comic called [Atari STen](http://hemdatornytt2.selda.se/atari-sten-arkiv/) (swedish pun) made by a young [Johan Wanloo](https://en.wikipedia.org/wiki/Johan_Wanloo)
 
 ![Atari STen from hemdatornytt](images/atari_sten.png)
-> "Remember kids, do your homework, eat your spinach and teach yourself assembler programming" - Atari STen
+> "Remember kids, do your homework, eat your spinach, be kind and teach yourself assembler programming" - Atari STen
 
 
 I still remember the intense feeling when I got my first scroll text working.
@@ -593,7 +593,7 @@ I remember meeting and talking to other young nerds about assembler code althoug
 
 One thing that truly blew my mind was when I read a blog post on by Paulo Simoes where he reversed engineered everything there is about pt_src3.s and improved upon it significantly. The original pt_src3.s wasn't commented (why? assembler is so obvious amirite?) and it relies on a bunch of tricks and self generating code. I was very impressed and I read the blog post with much joy. As an extra cherry on the top he [released a 12.5kHZ and 25kHz version](https://www.atari-forum.com/viewtopic.php?t=24718) of the player. I know how obscure pt_src3.s is so I am very impressed by this feat.
 
-Or this [github repo](https://github.com/robcowell/LanceReplay) by [Mrs Beanbag/RiFT](https://github.com/robcowell) where she fixes some bugs in the old pt_src3.s. I am amazed that the Atari ST scene 2022 seems more alive than it did in 1993.
+Or this by [Mrs Beanbag/RiFT](https://github.com/robcowell/LanceReplay) where she fixes some bugs in pt_src3.s. I am amazed that the Atari ST scene 2022 seems more alive than it did in 1993.
 
 Let's not forget about the amazing new productions like [FirST Love by Overlanders](https://www.youtube.com/watch?v=3QginSr9V7A) that to a hacker whose mind is stuck in 1993 seems impossible. The Atari ST also [sounds amazing](https://www.youtube.com/watch?v=TeCystriENs) these days in ways I never thought was possible.
 
@@ -648,7 +648,7 @@ As many have noted pt_src3.s had a fair amount of bugs, most of them I wasn't aw
 
 One thing I was aware of however was that certain mods sounded quite bad. I believe it was usually a sample with a short loop that was close to a sine wave where it was most appearant.
 
-I was hunting for this bug for a while but never managed to fix it. I am hopeful however when reading [Mrs Beanbag/RiFT]([github repo](https://github.com/robcowell/LanceReplay)) comments about fixed bugs in the sample loops that the blemish is finally stamped out now. I also know Paulo Simoes fixed a bunch of issues as well. Thank you, it has been bugging me for 30 years.
+I was hunting for this bug for a while but never managed to fix it. I am hopeful however when reading [Mrs Beanbag/RiFT](https://github.com/robcowell/LanceReplay) comments about fixed bugs in the sample loop code that the blemish is finally stamped out now. I also know Paulo Simoes fixed a bunch of issues as well. Thank you, it has been bugging me for 30 years.
 
 ## Post Scriptum: Amiga Octalyzer plugin
 
