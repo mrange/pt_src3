@@ -595,7 +595,7 @@ One thing that truly blew my mind was when I read a blog post on by Paulo Simoes
 
 Or this [github repo](https://github.com/robcowell/LanceReplay) by [Mrs Beanbag/RiFT](https://github.com/robcowell) where she fixes some bugs in the old pt_src3.s. I am amazed that the Atari ST scene 2022 seems more alive than it did in 1993.
 
-Let's not forget about the amazing new productions like [FirST Love by Overlanders](https://www.youtube.com/) that to a hacker whose mind is stuck in 1993 seems impossible. The Atari ST also [sounds amazing](https://www.youtube.com/watch?v=TeCystriENs) these days in ways I never thought was possible.
+Let's not forget about the amazing new productions like [FirST Love by Overlanders](https://www.youtube.com/watch?v=3QginSr9V7A) that to a hacker whose mind is stuck in 1993 seems impossible. The Atari ST also [sounds amazing](https://www.youtube.com/watch?v=TeCystriENs) these days in ways I never thought was possible.
 
 Honestly, the list of amazing things done the last 20 years on Atari ST is too long for me to list here.
 
