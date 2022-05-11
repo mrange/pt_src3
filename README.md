@@ -7,16 +7,16 @@
 
 In my small university dorm room I completed pt_src3.s right before I was about to start my university studies at Chalmers.
 
-pt_src3.s was the amalgam of all the best ideas I had seen for Paula emulators for Atari STE.
+pt_src3.s was the amalgam of all the best ideas I had seen for Paula emulators for Atari STe.
 
-At the time of the release I felt the Atari STE was definitely fading away in favour of the PC. I thought pt_src3.s was a good paula emulator across several metrics but because of the disappearance of the Atari scene it would never see. I uploaded the pt_src3.s to ftp.sunet.se and ftp.funet.fi and turned off my Atari STE.
+At the time of the release I felt the Atari STe was definitely fading away in favour of the PC. I thought pt_src3.s was a good paula emulator across several metrics but because of the disappearance of the Atari scene it would never see. I uploaded the pt_src3.s to ftp.sunet.se and ftp.funet.fi and turned off my Atari STe.
 
 ![Atari STF, CC-BY-2.5 Bill Bertram](https://upload.wikimedia.org/wikipedia/commons/3/39/Atari_1040STf.jpg)
-> Atari 1040STF, very similar look to the somewhat improved Atari 1040STE I had.
+> Atari 1040STF, very similar look to the somewhat improved Atari 1040STe I had.
 
 ## Summer 2000, Göteborg
 
-I was now working as a junior software engineer for a company doing map engine and other consultancy work. I had forgotten about my Atari STE and pt_src3.s.
+I was now working as a junior software engineer for a company doing map engine and other consultancy work. I had forgotten about my Atari STe and pt_src3.s.
 
 I was therefore very surprised when I was contacted over email by [Leonard](https://demozoo.org/sceners/2527/) asking my about pt_src3.s and if I could do something about the excessive memory usage of it for a demo he was creating.
 
@@ -108,13 +108,13 @@ Hemdatornytt had a comic called [Atari STen](http://hemdatornytt2.selda.se/atari
 
 I still remember the intense feeling when I got my first scroll text working.
 
-## Atari STE around 1991
+## Atari STe around 1991
 
-The Atari 260 ST was ageing, it had a few technical problems and I read about the new Atari STE which among other things had support for digital to audio signal conversion. This was possible on the old Atari ST but had to be emulated which took precious clock cycles.
+The Atari 260 ST was ageing, it had a few technical problems and I read about the new Atari STe which among other things had support for digital to audio signal conversion. This was possible on the old Atari ST but had to be emulated which took precious clock cycles.
 
-My father got me a summer job on an oil tanker which itself was pretty cool but the important outcome was that I earned a bit of money and could purchase an Atari STE.
+My father got me a summer job on an oil tanker which itself was pretty cool but the important outcome was that I earned a bit of money and could purchase an Atari STe.
 
-To help me unlock the power of the STE I had the book "Atari ST/STE - Hårdfakta" that had been updated to contain information about the STE specific hardware.
+To help me unlock the power of the STe I had the book "Atari ST/STe - Hårdfakta" that had been updated to contain information about the STe specific hardware.
 
 !["Atari Hardfacts"](images/hardfacts.png)
 > My copy of Hårdfakta was falling apart from constant flicking through the pages
@@ -123,24 +123,24 @@ To help me unlock the power of the STE I had the book "Atari ST/STE - Hårdfakta
 
 The Carebears, which I idolised due to The Cuddle Demos, released their own tracker called TCB Tracker. Trackers were a software common on the Amiga to make cool music.
 
-The TCB Tracker was rumoured to have an STE enhanced mode that utilized the Atari STE new digital to audio sound chip.
+The TCB Tracker was rumoured to have an STe enhanced mode that utilized the Atari STe new digital to audio sound chip.
 
 ![TCB Tracker from internet archive](images/tcbtracker.png)
-> TCB Tracker was a bit of a disappointment to me as I was hoping for great STE mode. On the other hand the lack of said mode spurred me to try to create my own.
+> TCB Tracker was a bit of a disappointment to me as I was hoping for great STe mode. On the other hand the lack of said mode spurred me to try to create my own.
 
-I was however not impressed by the sound quality. The sound was more crisp in the Atari ST mode compared to the Atari STE mode.
+I was however not impressed by the sound quality. The sound was more crisp in the Atari ST mode compared to the Atari STe mode.
 
 Analysing the player code I found out why.
 
 On the old Atari ST when you emulated a digital to analog sound chip you ran an interrupt on 10kHz as a compromise between quality and speed. Each interrupt the next 8 bit sample was read and using "magic" (as in I never understood how it worked) the sample was translated to instructions to the Atari ST square wave sound chip that emulated a digital to audio conversion. It did sound surprisingly good often.
 
-On the new Atari STE there was however a dedicated DMA that automatically read 8 bit samples from memory into the sound chip for you.
+On the new Atari STe there was however a dedicated DMA that automatically read 8 bit samples from memory into the sound chip for you.
 
-The only difference between the Atari ST and Atari STE mode in the TCB Tracker player code was that instead of the interrupt writing to the Atari ST chip it wrote the samples to a 2 byte looped area that sent the samples to the STE sound chip at 12.5kHz. Essentially the same architecture which makes sense I suppose.
+The only difference between the Atari ST and Atari STe mode in the TCB Tracker player code was that instead of the interrupt writing to the Atari ST chip it wrote the samples to a 2 byte looped area that sent the samples to the STe sound chip at 12.5kHz. Essentially the same architecture which makes sense I suppose.
 
-A very simple change to make the sound more crisp was to switch the frequency from 12.5kHz to 50kHz (the highest supported frequency by the Atari STE).
+A very simple change to make the sound more crisp was to switch the frequency from 12.5kHz to 50kHz (the highest supported frequency by the Atari STe).
 
-However, in my mind in order to fully utilise the Atari STE an entirely new architecture has to be created. I decided to write my own player.
+However, in my mind in order to fully utilise the Atari STe an entirely new architecture has to be created. I decided to write my own player.
 
 ## NoiseTracker and Dr. Doom
 
@@ -155,19 +155,19 @@ But I needed some way to get me started.
 
 Games were typically protected in various ways to prevent piracy. These protections were removed and the games were released on "Compacted Disks" containing several games on a single floppy. This was called cracking a game and the people doing so often put a small "cracktro" with contact info, cool graphics and music before loading the game.
 
-One of those was made by a Dr. Doom. I can't find an image of this cracktro but what was special about it was that it had a decent STE player.
+One of those was made by a Dr. Doom. I can't find an image of this cracktro but what was special about it was that it had a decent STe player.
 
 Using a home-grown memory scanner I managed to find the decompressed code in memory, save it and reverse engineered it.
 
-The Dr. Doom player worked as I thought it should. It played NoiseTracker songs and it was architectured around the STE hardware.
+The Dr. Doom player worked as I thought it should. It played NoiseTracker songs and it was architectured around the STe hardware.
 
 I used the Dr. Doom player as a basis for my own player and pt_src3.s is therefore ultimately a derivative of the Dr. Doom player.
 
-## Amiga vs Atari STE
+## Amiga vs Atari STe
 
 The Amiga had 4 independent digital to analog sound channels with pitch and volume control.
 
-As much as we wanted the Atari STE to be an "Amiga killer" it didn't really deliver in that area as the Atari STE had 2 digital to analog sound channels with independent volume control and shared coarse pitch control. The replay frequency of the STE was 6kHz, 12.5kHZ, 25kHz and 50kHz.
+As much as we wanted the Atari STe to be an "Amiga killer" it didn't really deliver in that area as the Atari STe had 2 digital to analog sound channels with independent volume control and shared coarse pitch control. The replay frequency of the STe was 6kHz, 12.5kHZ, 25kHz and 50kHz.
 
 50kHz replay frequency was significantly higher than the Amiga about max ~28kHz replay frequency but that was about it.
 
@@ -177,12 +177,12 @@ In order to play Amiga Noisetracker the approach I went for was emulating the Am
 
 That meant I could use the Amiga NoiseTracker or ProTracker source code with just minor modifications to make them write to my "software" registers rather than the Amiga hardware registers.
 
-In order to emulate the Paula sound chip on Atari STE you had to implement:
+In order to emulate the Paula sound chip on Atari STe you had to implement:
 1. Fine grained pitch control per channel
 2. Volume control per channel
 3. Mix 2 channels into 1
 
-Atari STE left and right channel are interleaved bytes like so:
+Atari STe left and right channel are interleaved bytes like so:
 
 ```
 ------------------------------------------------
@@ -207,7 +207,7 @@ move.b    (a2,d4.b),d4    ; Do volume calculation, divided by 2 implictly
 add.b     (a3,d5.b),d4    ; Do volume calculation, divided by 2 implictly
                           ; adds the two samples to mix them
 move.b    d4,(a4)         ; Store the sample in the output buffer
-addq.l    #2,a4           ; The left & right channel are interleaved on STE
+addq.l    #2,a4           ; The left & right channel are interleaved on STe
                           ; Therefore add with two
 swap      d0              ; Restore the fixed point number
 swap      d1              ; Restore the fixed point number
@@ -222,7 +222,7 @@ This is not the very first version of the emulator as in the first version I als
 
 It was a very significant improvement but still the code above is slow.
 
-My memory of 68k instructions timings is a bit rusty but I think the above code evaluates to about 124 cycles per sample written. To support 12.5kHz you need to write 25,000 bytes per second (1 byte per each channel) which is about 3,100,000 cycles which on an 8MHz Atari STE is about 39% CPU or 80% CPU for a 25 kHz.
+My memory of 68k instructions timings is a bit rusty but I think the above code evaluates to about 124 cycles per sample written. To support 12.5kHz you need to write 25,000 bytes per second (1 byte per each channel) which is about 3,100,000 cycles which on an 8MHz Atari STe is about 39% CPU or 80% CPU for a 25 kHz.
 
 25 kHz did sound pretty good but it took a significant amount of time.
 
@@ -357,7 +357,7 @@ I was very satisified.
 
 I was satisfied with the player but I continued tinkering on it as there were now several good 50kHz players out there.
 
-The Amiga had 4 channels with independent pitch and volume control. The pitch control on Atari STE was too coarse to help but there was independent volume control for left & right channel on STE through a chip known as the LCM1992.
+The Amiga had 4 channels with independent pitch and volume control. The pitch control on Atari STe was too coarse to help but there was independent volume control for left & right channel on STe through a chip known as the LCM1992.
 
 The chip was finicky to use and I was confused with documentation on how to translate the Amiga volume control to the LCM1992 but after recomputing the tables in the documentation it was a fairly straightforward linear relationship.
 
@@ -434,7 +434,7 @@ I think [TalkTalk](https://demozoo.org/productions/59421/) has a cool and for it
 
 Code doesn't matter, what matters is the impression you make and [TalkTalk](https://demozoo.org/productions/59421/) made a significant impression on me.
 
-Another important event for me at Motorala Inside'93 was a chat with [Blade](https://demozoo.org/sceners/2500/) from [New Core](https://demozoo.org/groups/2218/) where we discussed STE players. [Blade](https://demozoo.org/sceners/2500/) later released [Octalyzer STE](https://demozoo.org/productions/73259/) so he is very knowledgeable.
+Another important event for me at Motorala Inside'93 was a chat with [Blade](https://demozoo.org/sceners/2500/) from [New Core](https://demozoo.org/groups/2218/) where we discussed STe players. [Blade](https://demozoo.org/sceners/2500/) later released [Octalyzer STe](https://demozoo.org/productions/73259/) so he is very knowledgeable.
 
 The [Blade](https://demozoo.org/sceners/2500/) player was very performant and utilized an improved way to calculate volume. If I remember correctly at the time it looked a bit like this
 
@@ -632,7 +632,7 @@ I did tinker a bit with 3D graphics but nothing serious came out of it and if I 
 
 ## Post Scriptum: 50 kHz Octalyzer plugin
 
-I had various discussions with [Blade](https://demozoo.org/sceners/2500/) regarding his [Octalyzer STE](https://demozoo.org/productions/73259/) project and he said he made a mod player interface called UCDM UMP.
+I had various discussions with [Blade](https://demozoo.org/sceners/2500/) regarding his [Octalyzer STe](https://demozoo.org/productions/73259/) project and he said he made a mod player interface called UCDM UMP.
 
 It was reasonably straightforward to implement the 4 channel UMP plugin but my calculations showed that a 50kHz 8 channel UMP plugin should be possible.
 
@@ -662,6 +662,58 @@ One of many plans I had was to port the pt_src3.s to Amiga hardware. I did some 
 
 I had some false starts but it's a significant amount of work and since I didn't have an Amiga I had to do all the testing on a friend's Amiga. Not the shortest inner loop for a developer. Code a few nights on the Atari. Take a copy, run over to my friend, test and crash. Back to the drawing board.
 
+## Post Scriptum: My best hack
+
+While thinking about my time as an Atari hacker I recalled the hack that I am most fond of. As mentioned, I talked to [Blade](https://demozoo.org/sceners/2500/) over making an UCDM plugin for pt_src3.s. As part of that process I got hold of the source to Blade's UCDM plugin. I remember the code was very clean and the idea was simple yet effective.
+
+IIRC the core of the player looked like this
+
+```asm
+move.b (a0)+, d4  ; Load channel #0 sample into d4
+
+move.b (a1)+, d1  ; Load channel #1 sample into d1
+move.l d1, a4     ; Upper bits of channel d1 is address to volume table
+add.b (a4), d4    ; Mix volume corrected channel #1 with channel #0
+
+move.b d4, (a5)+  ; Write mixed value to output buffer
+
+move.b (a2)+, d4  ; Load channel #2 sample into d4
+
+move.b (a3)+, d3  ; Load channel #3 sample into d3
+move.l d3, a4     ; Upper bits of channel d3 is address to volume table
+add.b (a4), d4    ; Mix volume corrected channel #3 with channel #0
+
+move.b d4, (a5)+  ; Write mixed value to output buffer
+```
+
+Blade player mixes all 4 channels at the same and uses LCM1992 to get correct volume for the channel #0 and channel #3. For 50kHz the core of the player consumes about 45% CPU which is very competitive.
+
+I didn't really understand at first how the channels are resampled into the desired frequency.
+
+Blade explained that he precomputed frequency tables that before he called the core mixer routine he had replaced `move.b (a0)+, d4` with `move.b (a0), d4` at the appropriate places so that the correct sample frequency was achieved. This takes a few cycles during each frame but not too bad.
+
+What was a bit more concerning was the frequency tables consumed about 1MiB of memory. This could be mitigated by reducing the frequency resolution which sounded great for some mods but not others.
+
+While converting pt_src3.s to UCDM I was thinking about this problem a bit and remembered an interesting and seldomly used feature of the Atari STe blitter.
+
+The Atari STe blitter was pretty cool but in comparison to the Amiga blitter it was a bit lacking.
+
+The Amiga blitter could read and mix 3 channels which was very useful when drawing sprites aka bobs on screen. Channel #0 reads sprite data, channel #1 reads sprite mask data, channel #2 reads the background image, AND away the background using the mask and OR the sprite data in its place then writes the data back to the background. The Atari STe blitter had only 2 input channels which meant drawing sprites required two passes, first AND background with mask, then OR sprite with background. In addition, the Amiga blitter could draw lines (!!) and fill polygons (!!). Very forward thinking.
+
+However, the Atari STe had a feature not in the Amiga blitter. The blitter had 16 16bit registers in the blitter and 1 of the sources could use the lower 4 bits to lookup a value that is written to the output. Beat that Amiga!
+
+I had tried to make a blitter based polygon filler using that but it was too hard for me.
+
+When I thought about the frequency tables there is just 1 bit of information needed; increment the register or no? However, for performance reasons the Blade player stored a full 16bit word that could just be copied into the mixer code.
+
+If you compacted the frequency tables into a single bit then you could reduce the memory overhead from 1MiB to 64KiB. Then you could populate the blitter lookup table with appropriate CPU instructions, set a frequency table as input source, bit shift the desired frequency bit to the lowest bit, use blitter lookup mode and blit into the mixer code.
+
+I tried it and it seemed to work fine while reducing memory overhead from 1MiB (way too much) to 64KiB (ok!).
+
+I remember this as the sweetest hack I ever did on the old Atari STe, unfortunately the source code is lost in time.
+
+PS. My second sweetest hack was getting a sync lock using the `stop` instruction. I am not sure if it was a practical way to get sync lock but it worked on my machine (TM).
+
 ## Post Scriptum: How do you get started today?
 
 One thing I wonder over sometimes is: "How do you get started today?"
@@ -670,7 +722,7 @@ I know why _I_ started and what motivated me but I have no clue what motivates k
 
 When I think back of us being 15 year old assembler hackers mostly self-taught I am amazed about how much potential a teenager has. Just add motivation and they can do amazing things.
 
-I talked to a very clever woman when I worked at Ericsson that is about 20 years younger than me. She started programming because she played [The Sims](https://www.ea.com/games/the-sims) alot and she figured out that she could make cool stuff in sims by modifying scripts and xml files in the game's folder. That was fun and she ended up as a programmer.
+I talked to a very clever woman when I worked at Ericsson that is about 20 years younger than me. She started programming because she played [The Sims](https://www.ea.com/games/the-sims) alot and she wanted her Sims to have purple eyes and custom clothes. She did so by tweaking scripts, images and xml files in the game's folder and found that it was fun and she ended up as a programmer.
 
 So easy and yet so hard, just motivate the teenager and miracles will happen.
 
@@ -766,7 +818,7 @@ Nice writeup, bringing back memories from a time long gone (although my period w
 ### George (GGN)
 Hi there,
 
-First off: many thanks for releasing the player source all these years ago, it was (and still is) a landmark in STE audio! I even used it in a [small production](https://www.pouet.net/prod.php?which=7872) back in 2000 or so .
+First off: many thanks for releasing the player source all these years ago, it was (and still is) a landmark in STe audio! I even used it in a [small production](https://www.pouet.net/prod.php?which=7872) back in 2000 or so .
 
 I just wanted to give you a heads up since you linked my source repository in your readme.
 pt_src3/README.md
