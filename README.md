@@ -702,7 +702,7 @@ The Amiga blitter could read and mix 3 channels which was very useful when drawi
 
 However, the Atari STe had a feature not in the Amiga blitter. The blitter had 16 16bit registers in the blitter and 1 of the sources could use the lower 4 bits to lookup a value that is written to the output. Beat that Amiga!
 
-I had tried to make a blitter based polygon filler using that but it was too hard for me.
+I had attempted to make a blitter based polygon filler using blitter lookup but it was too hard for me.
 
 When I thought about the frequency tables there is just 1 bit of information needed; increment the register or no? However, for performance reasons the Blade player stored a full 16bit word that could just be copied into the mixer code.
 
