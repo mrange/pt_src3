@@ -722,7 +722,7 @@ I know why _I_ started and what motivated me but I have no clue what motivates k
 
 When I think back of us being 15 year old assembler hackers mostly self-taught I am amazed about how much potential a teenager has. Just add motivation and they can do amazing things.
 
-I talked to a very clever woman when I worked at Ericsson that is about 20 years younger than me. She started programming because she played [The Sims](https://www.ea.com/games/the-sims) alot and she wanted her Sims to have purple eyes and custom clothes. She did so by tweaking scripts, images and xml files in the game's folder and found that it was fun and she ended up as a programmer.
+I talked to a [very clever woman](https://www.linkedin.com/in/amanda-n/) when I worked at Ericsson that is about 20 years younger than me. She started programming because she played [The Sims](https://www.ea.com/games/the-sims) alot and she wanted her Sims to have purple eyes and custom clothes. She did so by tweaking scripts, images and xml files in the game's folder and found that it was fun and she ended up as a programmer.
 
 So easy and yet so hard, just motivate the teenager and miracles will happen.
 
