@@ -842,6 +842,12 @@ Georges K - certainly a lot of mod players around 90/91 used ADDX - some with fr
 
 > Thanks for your insights Martin. I agree on sound quality. I always thought pt_src3.s as a decent compromise between speed and quality. There are certainly ways to improve quality but it's easy to run out of clock cycles on the old Atari STe. During my active time I thought [Songs of the Unexpected](https://www.youtube.com/watch?v=BGU7X5r2Vzg) had one of the best quality players on the STe. [Hifidelity Dreams](https://www.youtube.com/watch?v=ZYDQW7WbESs) also sound great and have the most amazing rasterbar idea I have ever seen. At university as I got access to more powerful computers I started tinkering with a player to support better resampling but I lost interest.
 
+### Joanna E
+
+Haha, what a lovely blogpost! That was before my time, so it is a very history lession :D
+
+> Thank you Joanna, very nice to hear that someone that wasn't there and experienced the zeitgeist still can appreciate the blog post. I am curious to learn someday how you started programming.
+
 ### Paul W aka manofstick aka F# performance guru
 
 My first machine was a c64 too; and played a lot of games, but typed in a lot of those DATA x, y, z lines from magazines I bought! I ordered, on tape, a 6510 assembler from somewhere in the UK (which to Australia probably all up would of been > month I'm guessing, probably a bank cheque mailed to them, who knows...) and then coded in assembly a bit, but didn't really have anyone else I knew who liked this kinda stuff so didn't get too far. (Smooth scrolling of a line of text through use of ROL is the only thing my memory seems to cling to!)
